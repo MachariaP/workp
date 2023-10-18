@@ -1,0 +1,23 @@
+SHELL
+
+1. An infinite while loop
+2. Take user input
+  a. We will need getline()
+3. Tokenize user input by whitespace (" ")
+  a. We will need strtok()
+4. Check if the first element of the new input exists
+  a. If full path, like /bin/ls, check if the file exists
+  b. If just name, try to get the file path through PATH env variable
+  c. We will need stat() or access()
+5. Create an array based on the path of the program and the given arguments
+  a. example: ls -la /tmp
+    - ls => program
+    - the remaining are arguments
+  b. same for /bin/ls -la /tmp
+  c. You will have to setup the array from step 4, array is like
+    - *arr[] = {program, ...args, NULL};
+    - first element is the program
+    - remaining elements are its arguments
+    - last element is NULL
+6. Execute the program with its arguments, don't forget to give the global environ as third parameters
+  a. We will need fork() and execve()
