@@ -20,7 +20,7 @@ int main()
         char *command_entered = NULL;
         char *argV[] = {NULL};
         int is_empty;
-        char **args_present;
+        char **args_present;;
         
 
         
